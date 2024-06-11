@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MenuContoller : MonoBehaviour
 {
-    public GameObject creditsPainel, controlsPainel, levelPainel;
+    public GameObject creditsPainel, controlsPainel, levelPainel, phasesPainel;
 
     public void OpenLevelBTN()
     {
@@ -30,7 +30,14 @@ public class MenuContoller : MonoBehaviour
     {
         controlsPainel.SetActive(false);
     }
-
+    public void OpenPhasesBTN()
+    {
+        controlsPainel.SetActive(true);
+    }
+    public void ClosePhasesBTN()
+    {
+        controlsPainel.SetActive(false);
+    }
     public void QuitBTN()
     {
         Application.Quit();
