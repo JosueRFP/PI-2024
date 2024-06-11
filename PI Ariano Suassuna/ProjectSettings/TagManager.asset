@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - chao
+  - Foot
+  - Enemy
   layers:
   - Default
   - TransparentFX

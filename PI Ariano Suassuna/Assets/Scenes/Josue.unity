@@ -316,7 +316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nome do Jogo
+  m_text: 'Backcountry Suassuna Adventure
 
 '
   m_isRightToLeft: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -535.8223, y: 0, z: 22.854965, w: -63.486053}
+  m_margin: {x: -895.23895, y: 0, z: -444.91504, w: -63.486053}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -733,10 +733,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2059790052}
   - {fileID: 1690976797}
   - {fileID: 1084227045}
   - {fileID: 1372126471}
+  - {fileID: 2059790052}
   m_Father: {fileID: 964620967}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2644,11 +2644,11 @@ RectTransform:
   - {fileID: 1488131717}
   - {fileID: 1931504741}
   m_Father: {fileID: 286268430}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 131.11, y: 55.49}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084227046
@@ -3246,7 +3246,7 @@ RectTransform:
   - {fileID: 1305264744}
   - {fileID: 635593997}
   m_Father: {fileID: 286268430}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4008,7 +4008,7 @@ RectTransform:
   - {fileID: 1482436416}
   - {fileID: 1293016233}
   m_Father: {fileID: 286268430}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4192,7 +4192,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1773981391}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 964620963}
+        m_TargetAssemblyTypeName: MenuContoller, Assembly-CSharp
+        m_MethodName: CloseControlsBTN
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1773981391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4533,7 +4545,7 @@ RectTransform:
   m_Children:
   - {fileID: 217579822}
   m_Father: {fileID: 286268430}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
