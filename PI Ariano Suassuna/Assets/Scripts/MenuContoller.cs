@@ -1,8 +1,14 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuContoller : MonoBehaviour
 {
-    public GameObject creditsPainel, controlsPainel, levelPainel, phasesPainel;
+    public GameObject creditsPainel, controlsPainel, levelPainel;
+
+    public void Teleport(string tp)
+    {
+        SceneManager.LoadScene(tp);
+    }
 
     public void OpenLevelBTN()
     {
@@ -30,14 +36,7 @@ public class MenuContoller : MonoBehaviour
     {
         controlsPainel.SetActive(false);
     }
-    public void OpenPhasesBTN()
-    {
-        controlsPainel.SetActive(true);
-    }
-    public void ClosePhasesBTN()
-    {
-        controlsPainel.SetActive(false);
-    }
+   
     public void QuitBTN()
     {
         Application.Quit();
