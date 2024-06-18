@@ -6,7 +6,8 @@ public class Player : MonoBehaviour
 {
     bool grondCheck;
     public Transform foot;
-    float speed = 5, jumpStreigth = 5;
+    float speed = 5, jumpStreigth = 5, bulletSpeed = 8;
+    public GameObject bullet;
     float horizontal;
     public Rigidbody2D body;
     Collider2D footCollision;
@@ -33,6 +34,11 @@ public class Player : MonoBehaviour
         if (horizontal != 0)
         {
             direction = (int)horizontal;
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
+            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * direction, 0);
         }
     }
 }

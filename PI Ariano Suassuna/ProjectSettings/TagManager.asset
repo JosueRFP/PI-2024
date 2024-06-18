@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - chao
   - Foot
   - Enemy
+  - Floor
+  - Bullet
   layers:
   - Default
   - TransparentFX
