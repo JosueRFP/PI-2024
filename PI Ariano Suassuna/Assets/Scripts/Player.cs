@@ -8,11 +8,11 @@ public class Player : MonoBehaviour
     public Transform foot;
     float speed = 5, jumpStreigth = 5, bulletSpeed = 8;
     public GameObject bullet;
-    float horizontal;
+    public GameObject damege;
     public Rigidbody2D body;
     Collider2D footCollision;
-    int direction = 1; 
-
+    int direction = 1;
+    float horizontal;
     // Start is called before the first frame update
     void Start()
     {
