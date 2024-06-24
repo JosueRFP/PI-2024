@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -16,7 +15,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnBecameInvisible()
     {
@@ -24,10 +23,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        
+
     }
 
-   4
-    {
-        
-    }
+}
