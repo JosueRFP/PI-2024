@@ -6,7 +6,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int life = 3;
-    public int damege = 1;
     public float speed;
     Rigidbody2D body;
     int direction = 1;
@@ -25,9 +24,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Player"))
         {
-            life -= collision.gameObject.GetComponent<Bullet>().damege;
+            //quando o inimigo colide com o Player, o inimigo destroi -> ver script Player
+            //life -= collision.gameObject.GetComponent<Player>();
 
             Destroy(collision.gameObject);
 

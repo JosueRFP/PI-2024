@@ -7,7 +7,6 @@ TagManager:
   - Foot
   - Enemy
   - Floor
-  - Bullet
   layers:
   - Default
   - TransparentFX

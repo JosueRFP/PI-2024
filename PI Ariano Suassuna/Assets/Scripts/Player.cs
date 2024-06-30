@@ -6,13 +6,12 @@ public class Player : MonoBehaviour
 {
     bool grondCheck;
     public Transform foot;
-    float speed = 5, jumpStreigth = 5, bulletSpeed = 8;
-    public GameObject bullet;
-    public GameObject damege;
+    float speed = 5, jumpStreigth = 5;
     public Rigidbody2D body;
     Collider2D footCollision;
     int direction = 1;
     float horizontal;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +34,13 @@ public class Player : MonoBehaviour
         {
             direction = (int)horizontal;
         }
-        if (Input.GetButtonDown("Fire1"))
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //quando o player entrear em cantatdo com o inimigo, o Player destroi -> ver Script Enemy
+        /*if (collision.CompareTag("Enemy"))
         {
-            GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
-            temp.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * direction, 0);
-        }
+            Destroy(collision.gameObject);
+        }*/ 
     }
 }
