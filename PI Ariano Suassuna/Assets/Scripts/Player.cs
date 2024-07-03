@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     Collider2D footCollision;
     int direction = 1;
     float horizontal;
+    public int life;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +40,20 @@ public class Player : MonoBehaviour
         {
             GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * direction, 0);
+        }
+        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            life -= collision.gameObject.GetComponent<Enemy>().damege;
+
+            if (life <= 0)
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 }

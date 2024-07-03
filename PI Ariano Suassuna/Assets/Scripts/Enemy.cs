@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         body.velocity = new Vector2(speed * direction, body.velocity.y);
+        if (life <= 0)
+        {
+
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,11 +36,7 @@ public class Enemy : MonoBehaviour
 
             Destroy(collision.gameObject);
 
-            if (life <= 0)
-            {
-
-                Destroy(gameObject);
-            }
+           
         }
 
     }
