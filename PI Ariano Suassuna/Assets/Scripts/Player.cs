@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     float horizontal;
     public GameObject bullet;
     public int life = 3;
+    public GameObject damege;
 
     // Start is called before the first frame update
     void Start()
@@ -42,17 +43,17 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //quando o player entrear em cantatdo com o inimigo, o Player destroi -> ver Script Enemy
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Thorn"))
         {
+         life -= collision.gameObject.GetComponent<Thorns>().damage;
+            
             if (life <= 0)
             {
                 Destroy(gameObject);
             }
-           
-                
-          
         }
+       
+        
         
     }
 

@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float speed;
     Rigidbody2D body;
     int direction = 1;
+    public GameObject damege;
+    public GameObject Thorns;
 
     // Start is called before the first frame update
     void Start()
