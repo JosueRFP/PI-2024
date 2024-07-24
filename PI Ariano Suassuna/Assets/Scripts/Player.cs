@@ -6,12 +6,11 @@ public class Player : MonoBehaviour
 {
     bool grondCheck;
     public Transform foot;
-    float speed = 5, jumpStreigth = 5, bulletspeed = 8;
+    float speed = 5, jumpStreigth = 5;
     public Rigidbody2D body;
     Collider2D footCollision;
     int direction = 1;
     float horizontal;
-    public GameObject bullet;
     public int life = 3;
     public GameObject damege;
 
@@ -36,10 +35,7 @@ public class Player : MonoBehaviour
         {
             direction = (int)horizontal;
         }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
-        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -59,9 +55,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+       /* if (collision.CompareTag("Thorns"))
         {
-            life -= collision.gameObject.GetComponent<Bullet>().damege;
+            life -= collision.gameObject.GetComponent<Thorns>().damege;
 
             Destroy(collision.gameObject);
 
@@ -71,7 +67,7 @@ public class Player : MonoBehaviour
                 Destroy(gameObject);
 
             }
-        }
+        }*/
     }
 }
 
