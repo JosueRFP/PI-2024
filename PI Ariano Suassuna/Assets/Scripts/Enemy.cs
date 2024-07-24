@@ -32,8 +32,11 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //quando o inimigo colide com o Player, o inimigo destroi -> ver script Player
-            Destroy(gameObject);
-                       
+            //life -= collision.gameObject.GetComponent<Player>();
+
+            Destroy(collision.gameObject);
+
+           
         }
 
     }
