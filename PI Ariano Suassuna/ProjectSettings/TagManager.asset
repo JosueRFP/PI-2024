@@ -8,7 +8,6 @@ TagManager:
   - Enemy
   - Floor
   - Bullet
-  - Thorn
   layers:
   - Default
   - TransparentFX
