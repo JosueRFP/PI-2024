@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
+        if (collision.CompareTag("Player"))
         {
             //quando o inimigo colide com o Player, o inimigo destroi -> ver script Player
             Destroy(gameObject);
