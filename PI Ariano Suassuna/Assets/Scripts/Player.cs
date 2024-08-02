@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public UnityEvent OnPause;
+    public UnityEvent OnUnPause;
+
     bool grondCheck;
     public Transform foot;
     float speed = 5, jumpStreigth = 5, bulletSpeed = 8;
@@ -14,6 +18,9 @@ public class Player : MonoBehaviour
     int direction = 1;
     float horizontal;
     public int life;
+    public GameObject Void;
+    public GameObject painelDied;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +48,20 @@ public class Player : MonoBehaviour
             GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * direction, 0);
         }
-        
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                OnUnPause.Invoke();
+            }
+            else
+            {
+                Time.timeScale = 0;
+                OnPause.Invoke();
+            }
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -52,8 +72,15 @@ public class Player : MonoBehaviour
             if (life <= 0)
             {
                 Destroy(gameObject);
+                Instantiate(painelDied, transform.position, transform.rotation);
             }
 
         }
+        if (collision.gameObject.CompareTag("Void"))
+        {
+            Destroy(gameObject);
+            Instantiate(painelDied, transform.position, transform.rotation);
+        }
+        
     }
 }
