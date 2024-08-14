@@ -1,5 +1,7 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -43,11 +45,11 @@ public class Player : MonoBehaviour
         {
             direction = (int)horizontal;
         }
-        if (Input.GetButtonDown("Fire1"))
+        /*if (Input.GetButtonDown("Fire1"))
         {
             GameObject temp = Instantiate(bullet, transform.position, transform.rotation);
             temp.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * direction, 0);
-        }
+        }*/
         if (Input.GetButtonDown("Cancel"))
         {
             if (Time.timeScale == 0)
@@ -65,22 +67,29 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+       if (collision.gameObject.CompareTag("Enemy"))
         {
-            life -= collision.gameObject.GetComponent<Enemy>().damege;
-
-            if (life <= 0)
-            {
-                Destroy(gameObject);
-                Instantiate(painelDied, transform.position, transform.rotation);
-            }
-
-        }
+            //life -= collision.gameObject.GetComponent<Enemy>().damege;
+            
+            //if (life <= 0)
+            // {
+            //Destroy(gameObject);
+            //Instantiate(painelDied, transform.position, transform.rotation);
+            //}
+            Destroy(collision.gameObject);
+            
+            
+       }
         if (collision.gameObject.CompareTag("Void"))
         {
             Destroy(gameObject);
             Instantiate(painelDied, transform.position, transform.rotation);
         }
+        
+        
+    }
+    private void winGame()
+    {
         
     }
 }
