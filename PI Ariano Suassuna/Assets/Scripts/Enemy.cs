@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     Rigidbody2D body;
     int direction = 1;
+    public int Respawn;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +40,9 @@ public class Enemy : MonoBehaviour
 
            
         }
-
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene(Respawn);
+        }
     }
 }

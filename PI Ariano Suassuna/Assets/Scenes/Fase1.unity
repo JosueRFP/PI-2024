@@ -414,6 +414,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!212 &212044309
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -824,7 +825,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 442868149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.7, z: 0}
+  m_LocalPosition: {x: 0, y: -18.3, z: 0}
   m_LocalScale: {x: 125.15579, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1044,6 +1045,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!50 &587486443
 Rigidbody2D:
   serializedVersion: 4
@@ -1173,6 +1175,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!212 &685659020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1501,6 +1504,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!212 &847624715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1734,6 +1738,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!212 &932483843
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2445,7 +2450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Paused
+  m_text: Game Paused
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2508,7 +2513,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -351.6829, w: -107.8615}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2812,8 +2817,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578477747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.4401, y: 5.4724, z: 0}
-  m_LocalScale: {x: 7.2342963, y: 3.1187615, z: 1}
+  m_LocalPosition: {x: 2.5528, y: -1.547, z: 0}
+  m_LocalScale: {x: 10.218603, y: 6.3543396, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2901,6 +2906,7 @@ MonoBehaviour:
   life: 3
   damege: 1
   speed: 0
+  Respawn: 0
 --- !u!212 &1806441719
 SpriteRenderer:
   m_ObjectHideFlags: 0
