@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
     public UnityEvent OnPause;
     public UnityEvent OnUnPause;
 
+   
     bool grondCheck;
     public Transform foot;
     float speed = 5, jumpStreigth = 5, bulletSpeed = 8;
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -62,6 +64,8 @@ public class Player : MonoBehaviour
             }
         }
 
+        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -82,5 +86,7 @@ public class Player : MonoBehaviour
             Instantiate(painelDied, transform.position, transform.rotation);
         }
         
+        
     }
+   
 }
