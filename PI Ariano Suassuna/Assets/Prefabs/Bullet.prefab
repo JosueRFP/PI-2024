@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -7443874756657720302}
   - component: {fileID: 747956314459113286}
   - component: {fileID: 8679907705971349712}
+  - component: {fileID: 8006798316024469824}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -99,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c0a43bfc5e35449b1cb6a7a5170e0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreTxt: {fileID: 0}
+  score: 0
   damege: 1
 --- !u!50 &747956314459113286
 Rigidbody2D:
@@ -147,3 +150,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8006798316024469824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118599803821049614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d0f800a22d4bb43b19d0773ea35f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pontuationTxt: {fileID: 0}
+  points: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     //public TMPro scoreTxt;
-    public int score;
+    public GameObject Score;
     public int life = 3;
     public int damege = 1;
     public float speed;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        score = 0;
+        
     }
 
     // Update is called once per frame
@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
         body.velocity = new Vector2(speed * direction, body.velocity.y);    
         if (life <= 0)
         {
-
             Destroy(gameObject);
         }
         //scoreTxt.text = score.ToString();
@@ -38,14 +37,8 @@ public class Enemy : MonoBehaviour
     {
         if (col.CompareTag("Bullet"))
         {
-            ScoreScript.scoreValue += 1;
-
             life -= col.gameObject.GetComponent<Bullet>().damege;
-            score = score + 1;
             Destroy(col.gameObject);
-            
-
-           
         }
         
     }
