@@ -6,9 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Bullet : MonoBehaviour
 {
-    public TextMeshPro scoreTxt;
-    public int score;
-    public int damege = 1;
+   public int damege = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +17,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreTxt.text = score.ToString("Score");
+        
     }
     private void OnBecameInvisible()
     {
@@ -30,12 +28,6 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 0.25f);
     }
        
-   private void OnTriggerEnter2D(Collider2D col)
-   {
-        if (col.CompareTag("Enemy") == true)
-        {
-            score = score + 1;
-        }
-    }
+   
     
 }

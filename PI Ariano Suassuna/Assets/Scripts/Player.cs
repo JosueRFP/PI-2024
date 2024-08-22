@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public UnityEvent OnPause;
     public UnityEvent OnUnPause;
+    public UnityEvent SpikedPlayer;
 
    
     bool grondCheck;
@@ -64,8 +65,8 @@ public class Player : MonoBehaviour
             }
         }
 
-        
 
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
             {
                 Destroy(gameObject);
                 Instantiate(painelDied, transform.position, transform.rotation);
+                SpikedPlayer.Invoke();
             }
 
         }
@@ -84,6 +86,7 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(painelDied, transform.position, transform.rotation);
+            SpikedPlayer.Invoke();
         }
         
         

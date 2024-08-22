@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float speed;
     Rigidbody2D body;
     int direction = 1;
+    int points = 5;
    
 
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
         //scoreTxt.text = score.ToString();
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -39,7 +41,12 @@ public class Enemy : MonoBehaviour
         {
             life -= col.gameObject.GetComponent<Bullet>().damege;
             Destroy(col.gameObject);
+
         }
         
+    }
+    private void OnDestroy()
+    {
+        FindObjectOfType<ScoreManeger>().AddScore(points);
     }
 }
