@@ -42,7 +42,6 @@ public class ContdownScript : MonoBehaviour
     void OnTimerEnd()
     {
         // Código a ser executado quando o tempo acabar
-        // Por exemplo, reiniciar a cena ou mostrar uma mensagem de "Fim de Jogo"
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-}// chat GPT;
+}
