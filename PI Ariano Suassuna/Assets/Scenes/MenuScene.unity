@@ -1886,7 +1886,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creditsPainel: {fileID: 0}
-  controlsPainel: {fileID: 0}
+  controlsPainel: {fileID: 878764283}
   levelPainel: {fileID: 0}
 --- !u!1 &885576572
 GameObject:
@@ -2313,7 +2313,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 65.84495, z: 0, w: 59.719826}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2364,8 +2364,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41.365356}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 416, y: -133.05}
+  m_SizeDelta: {x: 197.7, y: 148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1281805639
 MonoBehaviour:
@@ -2498,8 +2498,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -329.36536}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: -1.53, y: -392.91}
+  m_SizeDelta: {x: 198.47, y: 136.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1295215224
 MonoBehaviour:
