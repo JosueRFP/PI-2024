@@ -32,6 +32,6 @@ public class LifeManeger : MonoBehaviour
     }
     void UpdateLifeUI()
     {
-        lifeText.text = "Vida Restante: " + currentLife.ToString();
+        lifeText.text = "Life: " + currentLife.ToString();
     }
 }
