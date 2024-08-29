@@ -438,7 +438,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314.8301, y: 193.5}
+  m_AnchoredPosition: {x: 314.8301, y: 159.8}
   m_SizeDelta: {x: 170.34, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &79462928
@@ -2306,7 +2306,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   foot: {fileID: 360603710}
-  bullet: {fileID: 2118599803821049614, guid: ddcdfc295ed9e3c4ca205dde495c9c4e, type: 3}
+  bullet: {fileID: 557011711245855281, guid: ddcdfc295ed9e3c4ca205dde495c9c4e, type: 3}
   damege: {fileID: 0}
   body: {fileID: 414860924}
   life: 3
@@ -2383,8 +2383,9 @@ GameObject:
   - component: {fileID: 434789658}
   - component: {fileID: 434789660}
   - component: {fileID: 434789659}
+  - component: {fileID: 434789661}
   m_Layer: 5
-  m_Name: ScoreTxt
+  m_Name: EnemiesLeftTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2407,7 +2408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315, y: -210.52}
+  m_AnchoredPosition: {x: 315, y: -173}
   m_SizeDelta: {x: 170.34, y: 29.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434789659
@@ -2430,7 +2431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: '
+  m_text: 'Enemies Left:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2507,6 +2508,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434789657}
   m_CullTransparentMesh: 1
+--- !u!114 &434789661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434789657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01d08dcd9445384eac241625dbde065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCounter: {fileID: 434789659}
 --- !u!1 &442868149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3049,7 +3063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -257.03, y: 193.50005}
+  m_AnchoredPosition: {x: -257.03, y: 163}
   m_SizeDelta: {x: 285.94, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &518148481
@@ -8370,7 +8384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00375768953c5e44dbb3f2d7bdb6f0b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  enemysText: {fileID: 0}
+  enemys: 0
 --- !u!114 &1540983348
 MonoBehaviour:
   m_ObjectHideFlags: 0

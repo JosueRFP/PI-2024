@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    private EnemyManeger enemyManager;
     //public TMPro scoreTxt;
     public GameObject Score;
     public int life = 3;
@@ -20,7 +21,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        
+        enemyManager = FindObjectOfType<EnemyManeger>();
     }
 
     // Update is called once per frame
@@ -47,6 +48,9 @@ public class Enemy : MonoBehaviour
     }
     private void OnDestroy()
     {
-        FindObjectOfType<ScoreManeger>().AddScore(points);
+        if (enemyManager != null)
+        {
+            enemyManager.EnemyDestroyed();
+        }
     }
 }
