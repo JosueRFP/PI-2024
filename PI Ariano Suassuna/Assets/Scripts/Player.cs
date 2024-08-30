@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.VisualScripting;
-using UnityEditor.Tilemaps;
+//using UnityEditor.Tilemaps;
 
 public class Player : MonoBehaviour
 {
