@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void FixedUpdaate()
     {
         if(move <= -0.01f)
         {
