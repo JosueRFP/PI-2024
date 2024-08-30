@@ -1,17 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Unity.VisualScripting;
-//using UnityEditor.Tilemaps;
 
 public class Player : MonoBehaviour
 {
-    public UnityEvent OnPause;
-    public UnityEvent OnUnPause;
-    public UnityEvent SpikedPlayer;
-
-   
     bool grondCheck;
     public Transform foot;
     float speed = 5, jumpStreigth = 25, bulletSpeed = 8;
@@ -22,15 +13,18 @@ public class Player : MonoBehaviour
     int direction = 1;
     float move;
     public int life;
-    public GameObject Void;
+    public GameObject m_void;
     public GameObject painelDied;
     public Transform bulletSpawn;
     private bool facingRight = true;
-    
+    public SpriteRenderer spriteRenderer;
+
+    public UnityEvent OnPause, OnUnPause, SpikedPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+       spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -97,6 +91,18 @@ public class Player : MonoBehaviour
             }
         }
         
+    }
+
+    private void FixedUpdate()
+    {
+        if(move <= -0.01f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        if(move >= 0.01f)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
