@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public GameObject historyPainel;
+    public Transform historyPainel;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
         {
             if(collision.gameObject.CompareTag("Player")) 
             {
-                historyPainel.SetActive(true);
+                historyPainel.transform.position = Vector3.zero;
             }
 
         }
