@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void FixedUpdaate()
+    private void FixedUpdate()
     {
         if(move <= -0.01f)
         {
@@ -116,7 +116,6 @@ public class Player : MonoBehaviour
                 Instantiate(painelDied, transform.position, transform.rotation);
                 SpikedPlayer.Invoke();
             }
-
         }
         if (collision.gameObject.CompareTag("Void"))
         {
@@ -124,8 +123,6 @@ public class Player : MonoBehaviour
             Instantiate(painelDied, transform.position, transform.rotation);
             SpikedPlayer.Invoke();
         }
-        
-        
+                
     }
-   
 }

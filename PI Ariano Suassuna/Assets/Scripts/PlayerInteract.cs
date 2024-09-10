@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public Transform historyPainel;
+    public UnityEvent SuassunasHistory;
+    private bool isNearObj = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,22 +15,30 @@ public class PlayerInteract : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-       
+        if (other.CompareTag("Interactable"))
+        {
+            isNearObj = true;
+            SuassunasHistory.Invoke();
+            
+        } 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (Input.GetButtonDown("e"))
+        if (other.CompareTag("Interactable"))
         {
-            if(collision.gameObject.CompareTag("Player")) 
-            {
-                historyPainel.transform.position = Vector3.zero;
-            }
-
+            isNearObj = false;
         }
+    }
         
+    void Update()
+    {
+        if(isNearObj && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Interagiu");
+            SuassunasHistory.Invoke();
+        }
     }
 }

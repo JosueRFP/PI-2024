@@ -24,14 +24,20 @@ public class LifeManeger : MonoBehaviour
     }
     public void TakeDamege(int damege)
     {
-        if(currentLife < 0)
+        currentLife -= damege;
+        if(currentLife <= 0)
         {
             currentLife = 0;
+            Die();
         }
         UpdateLifeUI();
     }
     void UpdateLifeUI()
     {
-        lifeText.text = "Life: " + currentLife.ToString();
+        lifeText.text = "Vida: " + currentLife.ToString();
+    }
+    void Die()
+    {
+
     }
 }
