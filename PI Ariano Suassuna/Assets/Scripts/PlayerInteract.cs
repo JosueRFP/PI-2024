@@ -34,11 +34,12 @@ public class PlayerInteract : MonoBehaviour
     }
         
     void Update()
-    {
-        if(isNearObj && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Interagiu");
-            SuassunasHistory.Invoke();
-        }
+    {            
+            if (isNearObj && Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Interagiu");
+                SuassunasHistory.Invoke();
+                Time.timeScale = 0;
+            }            
     }
 }

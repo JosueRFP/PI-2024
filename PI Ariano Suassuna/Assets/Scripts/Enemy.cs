@@ -14,7 +14,6 @@ public class Enemy : MonoBehaviour
     public float speed;
     Rigidbody2D body;
     int direction = 1;
-    int points = 5;
    
 
     // Start is called before the first frame update
