@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LifeManeger : MonoBehaviour
 {
-    public int maxLife = 3;
+    public int maxLife;
     public int currentLife;
     public TextMeshProUGUI lifeText;
     
@@ -34,7 +34,7 @@ public class LifeManeger : MonoBehaviour
     }
     void UpdateLifeUI()
     {
-        lifeText.text = "Vida: " + currentLife.ToString();
+        lifeText.text = "Vida:" + currentLife.ToString();
     }
     void Die()
     {
