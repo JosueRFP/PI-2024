@@ -40,6 +40,14 @@ public class PlayerInteract : MonoBehaviour
                 Debug.Log("Interagiu");
                 SuassunasHistory.Invoke();
                 Time.timeScale = 0;
-            }            
+                return;
+            }
+            /*else if(!isNearObj && Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Não Interagiu!");
+                SuassunasHistory.Invoke();
+                Time.timeScale = 1;
+                
+            }*/        
     }
 }
