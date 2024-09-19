@@ -95,11 +95,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(move <= -0.01f)
+        if(move <= -1.0f)
         {
             spriteRenderer.flipX = false;
         }
-        if(move >= 0.01f)
+        if(move >= 1.0f)
         {
             spriteRenderer.flipX = true;
         }
