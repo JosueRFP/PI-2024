@@ -113,7 +113,6 @@ public class Player : MonoBehaviour
             if (life <= 0)
             {
                 Destroy(gameObject);
-                Instantiate(painelDied, transform.position, transform.rotation);
                 SpikedPlayer.Invoke();
             }
         }
