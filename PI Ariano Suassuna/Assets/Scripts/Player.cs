@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     bool grondCheck;
     public Transform foot;
-    float speed = 5, jumpStreigth = 35, bulletSpeed = 8;
+    float speed = 5, jumpStreigth = 35;
     public GameObject bulletPrefab;
     public GameObject damege;
     public Rigidbody2D body;
@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     float move;
     public int life;
     public GameObject m_void;
-    public GameObject painelDied;
     public Transform bulletSpawn;
     private bool facingRight = true;
     public SpriteRenderer spriteRenderer;
@@ -106,20 +105,9 @@ public class Player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            life -= collision.gameObject.GetComponent<Enemy>().damege;
-
-            if (life <= 0)
-            {
-                Destroy(gameObject);
-                SpikedPlayer.Invoke();
-            }
-        }
         if (collision.gameObject.CompareTag("Void"))
         {
             Destroy(gameObject);
-            Instantiate(painelDied, transform.position, transform.rotation);
             SpikedPlayer.Invoke();
         }
                 
