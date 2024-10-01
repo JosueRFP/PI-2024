@@ -8,7 +8,7 @@ public class LifeManeger : MonoBehaviour
 {
     public int maxLife;
     public int currentLife;
-    public TextMeshProUGUI lifeText;
+    public TextMeshProUGUI lifeTxt;
     
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class LifeManeger : MonoBehaviour
     }
     void UpdateLifeUI()
     {
-        lifeText.text = "Vida:" + currentLife.ToString();
+        lifeTxt.text = "Vida:" + currentLife.ToString();
     }
     void Die()
     {
