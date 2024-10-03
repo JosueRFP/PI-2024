@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteractHistory : MonoBehaviour
 {
     public UnityEvent SuassunasHistory;
     private bool isNearObj = true;
@@ -34,19 +34,20 @@ public class PlayerInteract : MonoBehaviour
     }
         
     void Update()
-    {            
-            if (isNearObj && Input.GetKeyDown(KeyCode.E))
-            {   
+    {
+        if(CompareTag("Bau") && Input.GetKeyDown(KeyCode.E))
+        {
                 SuassunasHistory.Invoke();
                 Debug.Log("Senta que la vem história");
                 Time.timeScale = 0;
-            }
-            /*else if(!isNearObj && Input.GetKeyDown(KeyCode.E))
-            {
-                Debug.Log("Não Interagiu!");
-                SuassunasHistory.Invoke();
-                Time.timeScale = 1;
-                
-            }*/        
+        }
+
+        /*else if(!isNearObj && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Não Interagiu!");
+            SuassunasHistory.Invoke();
+            Time.timeScale = 1;
+
+        }*/
     }
 }
