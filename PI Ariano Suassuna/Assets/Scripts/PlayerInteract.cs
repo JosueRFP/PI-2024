@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +12,7 @@ public class PlayerInteractHistory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,8 +21,8 @@ public class PlayerInteractHistory : MonoBehaviour
         {
             isNearObj = true;
             SuassunasHistory.Invoke();
-
-        }
+            
+        } 
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -31,14 +32,14 @@ public class PlayerInteractHistory : MonoBehaviour
             isNearObj = false;
         }
     }
-
+        
     void Update()
     {
-        if (CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        if(CompareTag("Bau") && Input.GetKeyDown(KeyCode.E))
         {
-            SuassunasHistory.Invoke();
-            Debug.Log("Senta que la vem história");
-            Time.timeScale = 0;
+                SuassunasHistory.Invoke();
+                Debug.Log("Senta que la vem história");
+                Time.timeScale = 0;
         }
 
         /*else if(!isNearObj && Input.GetKeyDown(KeyCode.E))
