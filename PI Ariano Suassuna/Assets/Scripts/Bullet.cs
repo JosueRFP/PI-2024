@@ -6,12 +6,13 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Bullet : MonoBehaviour
 {
+   
    public int damege = 1;
 
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
@@ -27,7 +28,6 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, 0.50f);
     }
-       
-   
     
+        
 }
