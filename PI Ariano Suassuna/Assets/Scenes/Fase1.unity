@@ -1032,9 +1032,18 @@ MonoBehaviour:
   SuassunasHistory:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1344211158}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: , m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
-  isNearObj: 1
+      - m_Target: {fileID: 1344211158}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &174446914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2111,9 +2120,18 @@ MonoBehaviour:
   SuassunasHistory:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 1422328250}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: , m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
-  isNearObj: 1
+      - m_Target: {fileID: 269089708}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!4 &426692374 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4747694866668042341, guid: 0cde5280cb0df5240bf5cc2866248e08, type: 3}
@@ -4563,9 +4581,18 @@ MonoBehaviour:
   SuassunasHistory:
     m_PersistentCalls:
       m_Calls:
-      - {m_Target: {fileID: 269089708}, m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine, m_MethodName: SetActive, m_Mode: 6, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 1}, m_CallState: 2}
-    m_CallsDirty: 1
-  isNearObj: 1
+      - m_Target: {fileID: 269089708}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &987440947 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3564026850829729314, guid: 91aebb278b095f843a6d4213d7df47fd, type: 3}
@@ -7992,7 +8019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLife: 3
   currentLife: 3
-  lifeTxt: {fileID: 682330569}
+  lifeText: {fileID: 0}
 --- !u!114 &1422328252
 MonoBehaviour:
   m_ObjectHideFlags: 0
