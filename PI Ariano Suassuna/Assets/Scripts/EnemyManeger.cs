@@ -15,7 +15,8 @@ public class EnemyManeger : MonoBehaviour
         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         UpdateEnemyCount();
     }
-
+   
+   
 
     public void EnemyDestroyed()
     {
@@ -23,7 +24,7 @@ public class EnemyManeger : MonoBehaviour
         UpdateEnemyCount();
     }
 
-    void UpdateEnemyCount()
+    void  UpdateEnemyCount()
     {
         enemyCounter.text = "Enemies Left " + totalEnemies; 
     }

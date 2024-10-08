@@ -63,13 +63,17 @@ public class Enemy : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (col.CompareTag("Bullet"))
+        if (collision.CompareTag("Bullet"))
         {
-            life -= col.gameObject.GetComponent<Bullet>().damege;
-            Destroy(col.gameObject);
+            life -= collision.gameObject.GetComponent<Bullet>().damege;
+            Destroy(collision.gameObject);
 
+        }
+        if (collision.CompareTag("Void"))
+        {
+            Destroy(collision.gameObject);
         }
         
     }

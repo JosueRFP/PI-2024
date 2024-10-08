@@ -192,7 +192,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &271825403
@@ -222,7 +222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b558d10ba72b6344f8a0110c2c4aec48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawn: 0
 --- !u!61 &271825406
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -852,6 +851,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4676f772820ec84d9832670e762914c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foot: {fileID: 1764532607}
+  bulletPrefab: {fileID: 0}
+  damege: {fileID: 0}
+  body: {fileID: 1789930729}
+  life: 1
+  m_void: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   OnPause:
     m_PersistentCalls:
       m_Calls:
@@ -870,13 +877,9 @@ MonoBehaviour:
   OnUnPause:
     m_PersistentCalls:
       m_Calls: []
-  foot: {fileID: 1764532607}
-  bullet: {fileID: 2118599803821049614, guid: ddcdfc295ed9e3c4ca205dde495c9c4e, type: 3}
-  damege: {fileID: 0}
-  body: {fileID: 1789930729}
-  life: 1
-  Void: {fileID: 1736515343}
-  painelDied: {fileID: 429054517}
+  SpikedPlayer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1789930731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -926,7 +929,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1789930732

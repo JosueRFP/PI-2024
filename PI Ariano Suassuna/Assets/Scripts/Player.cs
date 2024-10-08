@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     bool grondCheck;
     public Transform foot;
-    float speed = 5, jumpStreigth = 35;
+    float speed = 5, jumpStreigth = 35f, bulletSpeed = 4 ;
     public GameObject bulletPrefab;
     public GameObject damege;
     public Rigidbody2D body;
