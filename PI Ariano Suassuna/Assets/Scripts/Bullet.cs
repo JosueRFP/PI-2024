@@ -25,8 +25,9 @@ public class Bullet : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        Destroy(gameObject, 0.50f);
+        Destroy(gameObject, 0.7f);
     }
+
        
    
     

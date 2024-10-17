@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         {
             facingRight = !facingRight;
             Vector3 theScale = transform.localScale;
-            theScale.x = -1;
+            theScale.x *= -1;
             transform.localScale = theScale;
         }
 
@@ -96,11 +96,11 @@ public class Player : MonoBehaviour
     {
         if(move <= -1.0f)
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
         }
         if(move >= 1.0f)
         {
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)

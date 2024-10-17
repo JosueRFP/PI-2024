@@ -14,14 +14,17 @@ public class BulletsQtd : MonoBehaviour
         UpdateBulletsTxt();
     }
 
-    void FireBullets()
+    public void FireBullets()
     {
-        if(bulletQtdMax >= 6)
-        {
-            bulletQtdMax--;
-            UpdateBulletsTxt();
-        }
+        //if (bulletQtdMax >= 6)
+       // {
+       //     bulletQtdMax--;
+       //     UpdateBulletsTxt();
+       // }   
     }
+    
+       
+    
     void UpdateBulletsTxt()
     {
         bulletQtdTxt.text = "Munição: " + bulletQtdMax;

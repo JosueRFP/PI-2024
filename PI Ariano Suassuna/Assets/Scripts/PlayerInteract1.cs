@@ -4,9 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerInteract : MonoBehaviour
+public class PlayerInteract1 : MonoBehaviour
 {
-    public UnityEvent SuassunasHistory;
+    public static UnityEvent SuassunasHistory;
     private bool isNearObj = true;
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
         {
             isNearObj = true;
             SuassunasHistory.Invoke();
+            Time.timeScale = 0;
             
         } 
     }
@@ -40,7 +41,6 @@ public class PlayerInteract : MonoBehaviour
           SuassunasHistory.Invoke();
           Time.timeScale = 0;
           Debug.Log("Senta que la vem história");
-                
         }
 
         /*else if(!isNearObj && Input.GetKeyDown(KeyCode.E))
