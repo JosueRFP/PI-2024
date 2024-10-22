@@ -10,7 +10,7 @@ public class PlayerInteract2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Interactable"))
         {
             isnearObj = true;
             Interact();
@@ -19,7 +19,7 @@ public class PlayerInteract2 : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Interactable"))
         {
             isnearObj = false;
         }
@@ -27,7 +27,7 @@ public class PlayerInteract2 : MonoBehaviour
 
     void Interact()
     {
-        if(CompareTag("Bau") && Input.GetKeyDown(KeyCode.E))
+        if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.E))
         {
             Time.timeScale = 0;
             SuassunasWorks.Invoke();

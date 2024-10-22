@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         body.velocity = new Vector2(speed * direction, body.velocity.y);    
         if (life <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
         //scoreTxt.text = score.ToString();
         
@@ -66,14 +66,15 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
-        {
+        {            
             life -= collision.gameObject.GetComponent<Bullet>().damege;
-            Destroy(collision.gameObject);
+            Debug.Log("Tomei");
+            Die();
 
         }
         if (collision.CompareTag("Void"))
         {
-            Destroy(collision.gameObject);
+            Die();
         }
         
     }
@@ -83,5 +84,9 @@ public class Enemy : MonoBehaviour
         {
             enemyManager.EnemyDestroyed();
         }
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }

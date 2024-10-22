@@ -10,7 +10,8 @@ TagManager:
   - Bullet
   - Void
   - Interactable
-  - Bau
+  - Bau 1
+  - Bau 2
   layers:
   - Default
   - TransparentFX

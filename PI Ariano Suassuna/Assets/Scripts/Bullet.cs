@@ -25,10 +25,18 @@ public class Bullet : MonoBehaviour
     }
     private void OnBecameVisible()
     {
-        Destroy(gameObject, 0.7f);
+        Destroy(gameObject, 0.25f);
     }
 
-       
-   
-    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
+
+
 }
