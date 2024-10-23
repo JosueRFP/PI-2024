@@ -22,7 +22,7 @@ public class EnemyRun : MonoBehaviour
         float distEvasao = Vector2.Distance(transform.position, Player.position);
         if(distEvasao <= detectorDaDistancia && !estaEvadindo)
         {
-            StartEvadindo();
+            StartEvad();
         }
         if (estaEvadindo)
         {
@@ -30,7 +30,7 @@ public class EnemyRun : MonoBehaviour
         }
     }
 
-    void StartEvadindo()
+    void StartEvad()
     {
         estaEvadindo = true;
         tempDeEvasao = tempEvasao;

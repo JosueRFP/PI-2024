@@ -19,7 +19,7 @@ public class PlayerInteract1 : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            isNearObj = true;
+            
             SuassunasHistory.Invoke();
             Time.timeScale = 0;
             
