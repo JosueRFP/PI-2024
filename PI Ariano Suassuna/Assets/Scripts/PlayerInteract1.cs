@@ -15,11 +15,11 @@ public class PlayerInteract1 : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Interactable"))
         {
-            
+            isNearObj = true;
             SuassunasHistory.Invoke();
             Time.timeScale = 0;
             
@@ -39,7 +39,6 @@ public class PlayerInteract1 : MonoBehaviour
         if(CompareTag("Bau 1") && Input.GetKeyDown(KeyCode.E))
         {
           SuassunasHistory.Invoke();
-          Time.timeScale = 0;
           Debug.Log("Senta que la vem história");
         }
 
