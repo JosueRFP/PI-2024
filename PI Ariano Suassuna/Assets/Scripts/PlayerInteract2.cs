@@ -13,7 +13,7 @@ public class PlayerInteract2 : MonoBehaviour
         if (other.CompareTag("Interactable"))
         {
             isnearObj = true;
-            Interact();
+            Interact(other);
         }
     }
 
@@ -25,11 +25,10 @@ public class PlayerInteract2 : MonoBehaviour
         }
     }
 
-    void Interact()
+    void Interact(Collider2D other)
     {
-        if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.E))
+        if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.F))
         {
-            Time.timeScale = 0;
             SuassunasWorks.Invoke();
         }
     }
