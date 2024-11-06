@@ -2,23 +2,25 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
-{
-    bool grondCheck;
+{   
     public Transform foot;
-    float speed = 5, jumpStreigth = 35f, bulletSpeed = 4 ;
     public GameObject bulletPrefab;
     public GameObject damege;
     public Rigidbody2D body;
-    Collider2D footCollision;
-    int direction = 1;
-    float move;
     public int life;
     public GameObject m_void;
     public Transform bulletSpawn;
-    private bool facingRight = true;
     public SpriteRenderer spriteRenderer;
-
     public UnityEvent OnPause, OnUnPause, SpikedPlayer;
+    public Animator animator;
+
+    private float horizontalInput;
+    bool grondCheck;
+    float move;
+    int direction = 1;
+    Collider2D footCollision;
+    float speed = 5, jumpStreigth = 35f, bulletSpeed = 4;
+    private bool facingRight = true;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +31,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
         grondCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
         move = Input.GetAxisRaw("Horizontal");
         //GetAxixRaw para jogos antigos que vão na velocidade maxima
         body.velocity = new Vector2(move * speed, body.velocity.y);
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         if(move > 0 && !facingRight)
         {
             Flip();
