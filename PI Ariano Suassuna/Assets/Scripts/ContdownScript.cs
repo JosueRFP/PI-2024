@@ -30,7 +30,7 @@ public class ContdownScript : MonoBehaviour
                 timeRemaining = 0;
                 timerIsRunning = false;
                 UpdateTimerText();
-                OnTimerEnd();
+                OnTimerEnd();                
             }
         }
     }

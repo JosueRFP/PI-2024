@@ -12,6 +12,7 @@ TagManager:
   - Interactable
   - Bau 1
   - Bau 2
+  - Damege
   layers:
   - Default
   - TransparentFX

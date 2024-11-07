@@ -27,7 +27,7 @@ public class PlayerInteract2 : MonoBehaviour
 
     void Interact(Collider2D other)
     {
-        if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.F))
+        if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.Z))
         {
             SuassunasWorks.Invoke();
         }

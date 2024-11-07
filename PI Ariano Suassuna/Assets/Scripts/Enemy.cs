@@ -68,15 +68,13 @@ public class Enemy : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {            
             life -= collision.gameObject.GetComponent<Bullet>().damege;
-            Debug.Log("Tomei");
             Die();
 
         }
         if (collision.CompareTag("Void"))
         {
             Die();
-        }
-        
+        }      
     }
     private void OnDestroy()
     {

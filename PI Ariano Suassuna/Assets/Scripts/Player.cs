@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     float move;
     int direction = 1;
     Collider2D footCollision;
-    float speed = 5, jumpStreigth = 35f, bulletSpeed = 4;
+    float speed = 3f, jumpStreigth = 35f, bulletSpeed = 4;
     private bool facingRight = true;
 
     // Start is called before the first frame update
@@ -115,6 +115,7 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             SpikedPlayer.Invoke();
         }
-                
+        
+
     }
 }
