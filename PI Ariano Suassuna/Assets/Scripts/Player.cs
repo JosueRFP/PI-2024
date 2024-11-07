@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public AudioBehaviour
     public Transform foot;
     public GameObject bulletPrefab;
     public GameObject damege;
