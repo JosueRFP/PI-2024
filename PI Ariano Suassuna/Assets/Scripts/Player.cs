@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
-{   
+{
+    public AudioBehaviour
     public Transform foot;
     public GameObject bulletPrefab;
     public GameObject damege;
@@ -13,7 +14,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public UnityEvent OnPause, OnUnPause, SpikedPlayer;
     public Animator animator;
-
+    
     private float horizontalInput;
     bool grondCheck;
     float move;
@@ -108,14 +109,20 @@ public class Player : MonoBehaviour
             //spriteRenderer.flipX = true;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (collision.gameObject.CompareTag("Void"))
+        if (col.gameObject.CompareTag("Void"))
         {
             Destroy(gameObject);
             SpikedPlayer.Invoke();
         }
-        
+        if (col.gameObject.CompareTag("Damege"))
+        {
+            Destroy(gameObject);
+            SpikedPlayer.Invoke();
+        }
+
+
 
     }
 }
