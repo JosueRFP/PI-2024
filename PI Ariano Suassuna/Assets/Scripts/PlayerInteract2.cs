@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PlayerInteract2 : MonoBehaviour
 {
     private bool isnearObjects;
-    public UnityEvent SuassunasWorks;
+    public UnityEvent SuassunasObras;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,7 +27,7 @@ public class PlayerInteract2 : MonoBehaviour
     {
         if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.Z))
         {
-            SuassunasWorks.Invoke();
+            SuassunasObras.Invoke();
             print("Funciona");
         }
     }
