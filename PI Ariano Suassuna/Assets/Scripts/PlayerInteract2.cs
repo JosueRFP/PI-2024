@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 public class PlayerInteract2 : MonoBehaviour
 {
-    bool isnearObj = true;
+    private bool isnearObjects;
     public UnityEvent SuassunasWorks;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Interactable"))
         {
-            isnearObj = true;
+            isnearObjects = true;
             Interact(other);
         }
     }
@@ -21,7 +21,7 @@ public class PlayerInteract2 : MonoBehaviour
     {
         if (other.CompareTag("Interactable"))
         {
-            isnearObj = false;
+            isnearObjects = false;
         }
     }
 
@@ -30,6 +30,7 @@ public class PlayerInteract2 : MonoBehaviour
         if(CompareTag("Bau 2") && Input.GetKeyDown(KeyCode.Z))
         {
             SuassunasWorks.Invoke();
+            print("Funciona");
         }
     }
 

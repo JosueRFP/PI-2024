@@ -3,22 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class MenuContoller : MonoBehaviour
 {
-    public GameObject creditsPainel, controlsPainel, levelPainel;
+    public GameObject creditsPainel, controlsPainel;
 
     public void Teleport(string tp)
     {
         SceneManager.LoadScene(tp);
-    }
-
-    public void OpenLevelBTN()
-    {
-        levelPainel.SetActive(true);
-    }
-    public void CloseLevelBTN()
-    {
-        levelPainel.SetActive(false);
-    }
-    
+    }  
     public void OpenCreditsBTN()
     {
         creditsPainel.SetActive(true);

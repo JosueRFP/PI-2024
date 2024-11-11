@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ContdownScript : MonoBehaviour
 {
-    public GameObject endTime;
+    
     public float timeRemaining = 300f;  // Tempo inicial em segundos
     public TextMeshProUGUI countdownText;  // Referência ao TextMeshPro
 
@@ -42,8 +42,6 @@ public class ContdownScript : MonoBehaviour
 
     void OnTimerEnd()
     {
-        Instantiate(endTime);
-        // Código a ser executado quando o tempo acabar
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 }
