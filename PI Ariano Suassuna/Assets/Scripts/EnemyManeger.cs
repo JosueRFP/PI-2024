@@ -5,6 +5,7 @@ using TMPro;
 
 public class EnemyManeger : MonoBehaviour
 {
+    public GameObject endGame;
     public TextMeshProUGUI enemyCounter;
     private int totalEnemies;
 
@@ -27,5 +28,10 @@ public class EnemyManeger : MonoBehaviour
     void  UpdateEnemyCount()
     {
         enemyCounter.text = "Enemies Left " + totalEnemies; 
+        enemyCounter.color = Color.red;
+        if(totalEnemies == 0)
+        {
+            Instantiate(endGame);
+        }
     }
 }
