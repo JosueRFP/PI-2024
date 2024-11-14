@@ -34,13 +34,16 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         fireInput = Input.GetAxis("Fire1");
+        jumpInput = Input.GetAxis("Jump");
         transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
         groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
         move = Input.GetAxisRaw("Horizontal");
+
+
         //GetAxixRaw para jogos antigos que vão na velocidade maxima
         body.velocity = new Vector2(move * speed, body.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        animator.SetTrigger("Fire");
+        animator.SetFloat("Idle", Mathf.Abs(horizontalInput));
+      
 
         if(move > 0 && !facingRight)
         {
@@ -50,6 +53,7 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
+
         if (Input.GetButtonDown("Jump") && groundCheck)
         {
             body.AddForce(new Vector2(0, jumpStreigth * 100));
@@ -62,10 +66,21 @@ public class Player : MonoBehaviour
         {
             direction = (int)move;
         }
+
         if (Input.GetButtonDown("Fire1"))
-        {
+        {        
             Shoot();
         }
+
+        if (!Input.GetButtonDown("Fire1"))
+        {
+            animator.ResetTrigger("Fire");
+        }
+
+
+
+
+
         if (Input.GetButtonDown("Cancel"))
         {
             if (Time.timeScale == 0)
@@ -90,6 +105,7 @@ public class Player : MonoBehaviour
 
         void Shoot()
         {
+            animator.SetTrigger("Fire");
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (facingRight)
