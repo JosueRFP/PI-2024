@@ -14,30 +14,34 @@ public class Player : MonoBehaviour
     public UnityEvent OnPause, OnUnPause, SpikedPlayer;
     public Animator animator;
     
-    private float horizontalInput;
-    bool grondCheck;
+    private float horizontalInput, fireInput, jumpInput;
+    bool groundCheck;
     float move;
     int direction = 1;
     Collider2D footCollision;
     float speed = 3f, jumpStreigth = 35f, bulletSpeed = 4;
     private bool facingRight = true;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-       spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+        fireInput = Input.GetAxis("Fire1");
         transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
-        grondCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
+        groundCheck = Physics2D.OverlapCircle(foot.position, 0.05f);
         move = Input.GetAxisRaw("Horizontal");
         //GetAxixRaw para jogos antigos que vão na velocidade maxima
         body.velocity = new Vector2(move * speed, body.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        animator.SetTrigger("Fire");
+
         if(move > 0 && !facingRight)
         {
             Flip();
@@ -46,10 +50,13 @@ public class Player : MonoBehaviour
         {
             Flip();
         }
-        if (Input.GetButtonDown("Jump") && grondCheck)
+        if (Input.GetButtonDown("Jump") && groundCheck)
         {
             body.AddForce(new Vector2(0, jumpStreigth * 100));
-
+            animator.SetBool("IsJumping", true);
+        } else if (groundCheck)
+        {
+            animator.SetBool("IsJumping", false);
         }
         if (move != 0)
         {
@@ -71,7 +78,7 @@ public class Player : MonoBehaviour
                 Time.timeScale = 0;
                 OnPause.Invoke();
             }
-        }
+        }       
 
         void Flip()
         {
