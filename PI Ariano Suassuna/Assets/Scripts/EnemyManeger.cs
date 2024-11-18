@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EnemyManeger : MonoBehaviour
 {
@@ -31,7 +32,11 @@ public class EnemyManeger : MonoBehaviour
         enemyCounter.color = Color.red;
         if(totalEnemies == 0)
         {
-            Instantiate(endGame);
+            // Teleport(string tp);
         }
     }
+   public void Teleport(string tp)
+   {
+
+   }
 }

@@ -30,9 +30,10 @@ public class PlayerInteract2 : MonoBehaviour
             SuassunasObras.Invoke();
             print("Funciona");
         }
+       
     }
 
-
+    
 
 
 }
