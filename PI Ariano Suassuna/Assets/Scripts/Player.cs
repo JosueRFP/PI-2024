@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
-{
+{     
+    public float timeRate;
+    float nextFire = 100f;
     public Transform foot;
     public GameObject bulletPrefab;
     public GameObject damege;
@@ -13,6 +16,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public UnityEvent OnPause, OnUnPause, SpikedPlayer;
     public Animator animator;
+    public float fireRate;
     
     private float horizontalInput, fireInput, jumpInput;
     bool groundCheck;
@@ -42,7 +46,7 @@ public class Player : MonoBehaviour
 
         //GetAxixRaw para jogos antigos que vão na velocidade maxima
         body.velocity = new Vector2(move * speed, body.velocity.y);
-        animator.SetFloat("Idle", Mathf.Abs(horizontalInput));
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
       
 
         if(move > 0 && !facingRight)
@@ -57,10 +61,8 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Jump") && groundCheck)
         {
             body.AddForce(new Vector2(0, jumpStreigth * 100));
-            animator.SetBool("IsJumping", true);
         } else if (groundCheck)
         {
-            animator.SetBool("IsJumping", false);
         }
         if (move != 0)
         {
@@ -76,7 +78,11 @@ public class Player : MonoBehaviour
         {
             animator.ResetTrigger("Fire");
         }
-
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFire)
+        {
+            Shoot();
+            nextFire = Time.time + timeRate;
+        }
 
 
 
@@ -147,4 +153,6 @@ public class Player : MonoBehaviour
 
 
     }
+
+   
 }
