@@ -1,11 +1,13 @@
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System;
 
 public class ContdownScript : MonoBehaviour
 {
     
-    public float timeRemaining = 300f;  // Tempo inicial em segundos
+    public static float timeRemaining = 300f;  // Tempo inicial em segundos
+    TimeSpan timerSpan = TimeSpan.FromSeconds(timeRemaining);
     public TextMeshProUGUI countdownText;  // Referência ao TextMeshPro
 
     private bool timerIsRunning = false;
@@ -13,7 +15,7 @@ public class ContdownScript : MonoBehaviour
     void Start()
     {
         timerIsRunning = true;
-        UpdateTimerText();
+        //UpdateTimerText();
     }
 
     void Update()
@@ -23,25 +25,29 @@ public class ContdownScript : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
-                UpdateTimerText();
+                timerSpan = TimeSpan.FromSeconds(timeRemaining);
+                //UpdateTimerText();
             }
             else
             {
                 timeRemaining = 0;
                 timerIsRunning = false;
-                UpdateTimerText();
+                //UpdateTimerText();
                 OnTimerEnd();                
             }
+            countdownText.text = timerSpan.ToString(@"mm\:ss");
         }
     }
 
-    void UpdateTimerText()
+    /*void UpdateTimerText()
     {
-        countdownText.text = Mathf.CeilToInt(timeRemaining).ToString();
-    }
+        countdownText.text = Mathf.CeilToInt(timeRemaining).ToString(@"mm\:ss");
+    }*/
 
     void OnTimerEnd()
     {
+        timeRemaining += 300;
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 }

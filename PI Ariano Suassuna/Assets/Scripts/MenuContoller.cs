@@ -5,6 +5,10 @@ public class MenuContoller : MonoBehaviour
 {
     public GameObject creditsPainel, controlsPainel;
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
     public void Teleport(string tp)
     {
         SceneManager.LoadScene(tp);

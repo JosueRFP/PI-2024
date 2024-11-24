@@ -17,26 +17,19 @@ public class EnemyManeger : MonoBehaviour
         totalEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
         UpdateEnemyCount();
     }
-   
-   
-
     public void EnemyDestroyed()
     {
         totalEnemies--;
         UpdateEnemyCount();
     }
 
-    void  UpdateEnemyCount()
+    void UpdateEnemyCount()
     {
-        enemyCounter.text = "Enemies Left " + totalEnemies; 
+        enemyCounter.text = "Enemies Left " + totalEnemies;
         enemyCounter.color = Color.red;
-        if(totalEnemies == 0)
+        if (totalEnemies == 0)
         {
-            // Teleport(string tp);
+            endGame.SetActive(true);
         }
     }
-   public void Teleport(string tp)
-   {
-
-   }
 }
