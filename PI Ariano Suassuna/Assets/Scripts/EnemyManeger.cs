@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class EnemyManeger : MonoBehaviour
 {
-    public GameObject endGame;
+    public GameObject endGameGood;
     public TextMeshProUGUI enemyCounter;
     private int totalEnemies;
-
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +25,9 @@ public class EnemyManeger : MonoBehaviour
         enemyCounter.color = Color.red;
         if (totalEnemies == 0)
         {
-            endGame.SetActive(true);
+            endGameGood.SetActive(true);    
+            Time.timeScale = 1f;
         }
+       
     }
 }

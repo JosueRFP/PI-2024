@@ -5,8 +5,8 @@ using System;
 
 public class ContdownScript : MonoBehaviour
 {
-    
-    public static float timeRemaining = 300f;  // Tempo inicial em segundos
+    public GameObject endGameBad;
+    public static float timeRemaining = 421f;  // Tempo inicial em segundos
     TimeSpan timerSpan = TimeSpan.FromSeconds(timeRemaining);
     public TextMeshProUGUI countdownText;  // Referência ao TextMeshPro
 
@@ -46,8 +46,9 @@ public class ContdownScript : MonoBehaviour
 
     void OnTimerEnd()
     {
-        timeRemaining += 300;
-        Time.timeScale = 1;
+        endGameBad.SetActive(true);
+        timeRemaining += 421;
+        Time.timeScale = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 }
