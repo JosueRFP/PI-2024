@@ -26,7 +26,7 @@ public class EnemyManeger : MonoBehaviour
         if (totalEnemies == 0)
         {
             endGameGood.SetActive(true);    
-            Time.timeScale = 1f;
+            Time.timeScale = 0f;
         }
        
     }
