@@ -21,7 +21,7 @@ public class EnemyManeger : MonoBehaviour
 
     void UpdateEnemyCount()
     {
-        enemyCounter.text = "Enemies Left " + totalEnemies;
+        enemyCounter.text = "Cactos Restantes " + totalEnemies;
         enemyCounter.color = Color.red;
         if (totalEnemies == 0)
         {
