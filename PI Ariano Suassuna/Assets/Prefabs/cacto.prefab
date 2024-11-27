@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2772484022539146339}
   - component: {fileID: 2772484022539146340}
   - component: {fileID: 2772484022539146341}
-  - component: {fileID: 4430175516314447161}
   m_Layer: 0
   m_Name: cacto
   m_TagString: Enemy
@@ -174,17 +173,3 @@ MonoBehaviour:
   distEvasao: 0
   tempEvasao: 0
   estaEvadindo: 0
---- !u!114 &4430175516314447161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2772484022539146351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01d08dcd9445384eac241625dbde065, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endGameGood: {fileID: 0}
-  enemyCounter: {fileID: 0}

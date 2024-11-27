@@ -5,6 +5,7 @@ public class EnemyManeger : MonoBehaviour
 {
     public GameObject endGameGood;
     public TextMeshProUGUI enemyCounter;
+    
     private int totalEnemies;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class EnemyManeger : MonoBehaviour
 
     void UpdateEnemyCount()
     {
-        enemyCounter.text = "Cactos Restantes " + totalEnemies;
+        enemyCounter.text = "Cactos Restantes: " + totalEnemies;
         enemyCounter.color = Color.red;
         if (totalEnemies == 0)
         {
