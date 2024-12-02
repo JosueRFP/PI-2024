@@ -47,8 +47,8 @@ public class ContdownScript : MonoBehaviour
     void OnTimerEnd()
     {
         endGameBad.SetActive(true);
-        timeRemaining += 301;
         Time.timeScale = 0;
+        timeRemaining += 301;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 }
