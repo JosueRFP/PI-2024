@@ -5,6 +5,13 @@ using System;
 
 public class ContdownScript : MonoBehaviour
 {
+
+    void LoadHighScoreLevel()
+    {
+        // Load the level named "HighScore".
+        SceneManager.LoadScene("Fase1");
+
+    }
     public GameObject endGameBad;
     public static float timeRemaining = 301f;  // Tempo inicial em segundos
     TimeSpan timerSpan = TimeSpan.FromSeconds(timeRemaining);
