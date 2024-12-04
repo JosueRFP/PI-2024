@@ -1,17 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
-{     
+{
+    public TextMeshProUGUI lifeText, currentLife;
     public float timeRate;
     float nextFire = 100f;
     public Transform foot;
-    public GameObject bulletPrefab;
-    public GameObject damege;
+    public GameObject bulletPrefab, Damege;
+    public int damege = 1;
     public Rigidbody2D body;
-    public int life;
-    public GameObject m_void;
+    public int life = 3;
+    public int maxLife;
     public Transform bulletSpawn;
     public SpriteRenderer spriteRenderer;
     public UnityEvent OnPause, OnUnPause, SpikedPlayer;
@@ -29,6 +30,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxLife = life;
         spriteRenderer = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
     }
@@ -47,6 +49,7 @@ public class Player : MonoBehaviour
         //GetAxixRaw para jogos antigos que vão na velocidade maxima
         body.velocity = new Vector2(move * speed, body.velocity.y);
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        life -= damege;
       
 
         if(move > 0 && !facingRight)
@@ -137,22 +140,27 @@ public class Player : MonoBehaviour
             //spriteRenderer.flipX = true;
         }
     }
-    private void OnCollisionEnter2D(Collision2D col)
+    void UpdateLifeUI()
     {
-        if (col.gameObject.CompareTag("Void"))
-        {
-            Destroy(gameObject);
-            SpikedPlayer.Invoke();
-        }
-        if (col.gameObject.CompareTag("Damege"))
-        {
-            Destroy(gameObject);
-            SpikedPlayer.Invoke();
-        }
-
-
-
+        lifeText.text = "Vida:" + currentLife.ToString();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
-   
+        if (collision.gameObject.CompareTag("Void"))
+        {
+            Destroy(gameObject);
+            SpikedPlayer.Invoke();
+        }
+        if (collision.gameObject.CompareTag("Damege"))
+        {
+            life--;
+            if(life <= 0)
+            {
+                Destroy(gameObject);
+                SpikedPlayer.Invoke();
+            }
+            
+        }
+    }
 }
