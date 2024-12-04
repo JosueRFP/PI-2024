@@ -15,5 +15,12 @@ public class DialogueControl : MonoBehaviour
     [Header("Settings")]
     public float typingSpeed;
 
-    
+    public void Speech(Sprite p, string txt, string actorName)
+    {
+        dialogueObj.SetActive(true);
+        profile.sprite = p;
+        speechText.text = txt;
+        actorNameText.text = actorName;
+
+    }
 }
