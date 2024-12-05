@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class MenuContoller : MonoBehaviour
-{
+{   
     public GameObject creditsPainel, controlsPainel;
 
     private void Start()
@@ -34,6 +35,6 @@ public class MenuContoller : MonoBehaviour
     public void QuitBTN()
     {
         Application.Quit();
-        Debug.Log("Quitou");
+        //Debug.Log("Quitou");
     }
 }

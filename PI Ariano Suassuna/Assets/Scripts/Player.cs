@@ -4,7 +4,6 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public TextMeshProUGUI lifeText, currentLife;
     public float timeRate;
     float nextFire = 100f;
     public Transform foot;
@@ -15,7 +14,7 @@ public class Player : MonoBehaviour
     public int maxLife;
     public Transform bulletSpawn;
     public SpriteRenderer spriteRenderer;
-    public UnityEvent OnPause, OnUnPause, SpikedPlayer;
+    public UnityEvent OnPause, OnUnPause, SpikedPlayer, FireGun;
     public Animator animator;
     public float fireRate;
     
@@ -114,6 +113,7 @@ public class Player : MonoBehaviour
 
         void Shoot()
         {
+            FireGun.Invoke();
             animator.SetTrigger("Fire");
             GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
@@ -140,10 +140,7 @@ public class Player : MonoBehaviour
             //spriteRenderer.flipX = true;
         }
     }
-    void UpdateLifeUI()
-    {
-        lifeText.text = "Vida:" + currentLife.ToString();
-    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
